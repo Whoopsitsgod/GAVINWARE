@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cld3tbc7nhwkj"]
+[gd_scene load_steps=9 format=3 uid="uid://cld3tbc7nhwkj"]
 
 [ext_resource type="Script" uid="uid://bru37xeavgwqo" path="res://main_controller.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cf2npbl6g5svx" path="res://Transition.tscn" id="2_r0du0"]
 [ext_resource type="Shader" uid="uid://cbyw44pr57grg" path="res://Main.tres" id="2_uu6xs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fos0i"]
+viewport_path = NodePath("FrontViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_glv2v"]
 viewport_path = NodePath("SubViewportContainer/GameViewport")
@@ -19,7 +22,8 @@ shader = ExtResource("2_uu6xs")
 shader_parameter/Transition = SubResource("ViewportTexture_cm0pq")
 shader_parameter/Game = SubResource("ViewportTexture_glv2v")
 shader_parameter/Mask = SubResource("ViewportTexture_r0du0")
-shader_parameter/Transparency = 0.2
+shader_parameter/Front = SubResource("ViewportTexture_fos0i")
+shader_parameter/Transparency = 0.0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_r0du0")
