@@ -13,23 +13,25 @@ extends Node
 var health: int
 var game_scene: Node
 
+var speed = 0
+
 func _ready():
 	transition_viewport.world_2d = mask_viewport.world_2d
 	front_mask.world_2d = mask_viewport.world_2d
 	health = inital_health
-	change_game(load("res://Games/FiberOpticCable/FiberOpticCable.tscn"), 1)
+	change_game(load("res://Games/FiberOpticCable/FiberOpticCable.tscn"))
 
-func transition_speed(speed: int) -> float:
+func transition_speed() -> float:
 	return 2/(speed*0.01 + 1)
 
-func change_game(new_game: PackedScene, speed: int) -> void:
+func change_game(new_game: PackedScene) -> void:
 	for i: Node in game_viewport.get_children():
 		i.queue_free()
 	var g = new_game.instantiate()
 	game_viewport.add_child(g)
 	g.game_finished.connect(on_game_finished)
 	var tween = get_tree().create_tween()
-	var tween_time = transition_speed(speed)
+	var tween_time = transition_speed()
 	tween.set_parallel()
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.set_ease(Tween.EASE_IN)
@@ -42,3 +44,13 @@ func change_game(new_game: PackedScene, speed: int) -> void:
 
 func on_game_finished(success: bool) -> void:
 	print('did you win?: ' + str(success))
+	display.visible = true
+	var tween = get_tree().create_tween()
+	var tween_time = transition_speed()
+	tween.set_parallel()
+	tween.set_trans(Tween.TRANS_BOUNCE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(transition, "scale", Vector2(1,1), tween_time)
+	tween.tween_property(transition, "position", Vector2(320,240), tween_time)
+	tween.set_trans(Tween.TRANS_LINEAR)
+	tween.tween_method(func(a: float): display.material.set_shader_parameter("Transparency", a), 1.0, 0.0, tween_time)
