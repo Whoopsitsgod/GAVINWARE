@@ -15,11 +15,20 @@ var game_scene: Node
 
 var speed = 0
 
+var games = ["res://Games/FiberOpticCable/FiberOpticCable.tscn"]
+
 func _ready():
 	transition_viewport.world_2d = mask_viewport.world_2d
 	front_mask.world_2d = mask_viewport.world_2d
 	health = inital_health
-	change_game(load("res://Games/FiberOpticCable/FiberOpticCable.tscn"))
+	random_game()
+
+func random_game():
+	var random_game = games[randi() % len(games)]
+	change_game(load(random_game))
+
+func continue_games(): # What gets called after the last game is done
+	random_game()
 
 func transition_speed() -> float:
 	return 2/(speed*0.01 + 1)
@@ -37,13 +46,15 @@ func change_game(new_game: PackedScene) -> void:
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property(transition, "scale", Vector2(6.8,6.8), tween_time)
 	tween.tween_property(transition, "position", Vector2(320,-120), tween_time)
-	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_method(func(a: float): display.material.set_shader_parameter("Transparency", a), 0.0, 1.0, tween_time)
-	tween.tween_callback(func(): display.visible = false).set_delay(tween_time)
-	tween.tween_callback(func(): g.start_game(speed)).set_delay(tween_time)
+	tween.set_parallel(false)
+	tween.tween_callback(func(): display.visible = false)
+	tween.tween_callback(func(): g.start_game(speed))
 
 func on_game_finished(success: bool) -> void:
-	print('did you win?: ' + str(success))
+	if not success:
+		health -= 1
+	$RichTextLabel.text = str(health)
 	display.visible = true
 	var tween = get_tree().create_tween()
 	var tween_time = transition_speed()
@@ -52,5 +63,6 @@ func on_game_finished(success: bool) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(transition, "scale", Vector2(1,1), tween_time)
 	tween.tween_property(transition, "position", Vector2(320,240), tween_time)
-	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.tween_method(func(a: float): display.material.set_shader_parameter("Transparency", a), 1.0, 0.0, tween_time)
+	tween.set_parallel(false)
+	tween.tween_callback(func(): continue_games())
