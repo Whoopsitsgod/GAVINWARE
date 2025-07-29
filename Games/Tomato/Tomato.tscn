@@ -1,28 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhiu3mn3g7a8h"]
+[gd_scene load_steps=11 format=3 uid="uid://dhiu3mn3g7a8h"]
 
+[ext_resource type="Script" uid="uid://wmc55a337otx" path="res://Games/Tomato/tomato.gd" id="1_lv8d1"]
 [ext_resource type="Texture2D" uid="uid://boiiosvr50u1r" path="res://Games/Tomato/tomato_background.png" id="1_yujni"]
 [ext_resource type="Texture2D" uid="uid://bwmtc5af3okpj" path="res://Games/Tomato/tomato_gavin_1.png" id="2_lv8d1"]
 [ext_resource type="Texture2D" uid="uid://k1rkn7wtnder" path="res://Games/Tomato/tomato_gavin_2.png" id="3_hfjst"]
 [ext_resource type="Texture2D" uid="uid://b8u1gkarii1df" path="res://Games/Tomato/tomato_gavin_3.png" id="4_h8asl"]
 [ext_resource type="Texture2D" uid="uid://widjpsuayq54" path="res://Games/Tomato/tomato_jackson_1.png" id="5_bip7y"]
 [ext_resource type="Texture2D" uid="uid://bmkes4tpsdvl2" path="res://Games/Tomato/tomato_jackson_2.png" id="6_u6016"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_anq21"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_lv8d1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_hfjst")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_h8asl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://b2jgehf6pwm8b" path="res://Games/Tomato/tomato_jackson_3.png" id="8_hfjst"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6syp"]
 animations = [{
@@ -36,30 +21,63 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hfjst")
+}],
+"loop": true,
+"name": &"struck",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_anq21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lv8d1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hfjst")
+}],
+"loop": true,
+"name": &"get_ready",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h8asl")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
 }]
 
 [node name="Tomato" type="Node2D"]
+script = ExtResource("1_lv8d1")
 
 [node name="TomatoBackground" type="Sprite2D" parent="."]
 position = Vector2(320, 240)
 texture = ExtResource("1_yujni")
 
-[node name="Gavin" type="RigidBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gavin"]
-position = Vector2(219, 341)
-sprite_frames = SubResource("SpriteFrames_anq21")
-
-[node name="Jackson" type="RigidBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Jackson"]
+[node name="Jackson" type="AnimatedSprite2D" parent="."]
 position = Vector2(444, 371)
 sprite_frames = SubResource("SpriteFrames_y6syp")
-frame = 1
-frame_progress = 0.867873
+animation = &"struck"
 
 [node name="Button" type="Button" parent="Jackson"]
-offset_left = 323.0
-offset_top = 284.0
-offset_right = 564.0
-offset_bottom = 470.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -121.0
+offset_top = -87.0
+offset_right = 120.0
+offset_bottom = 99.0
+
+[node name="Gavin" type="AnimatedSprite2D" parent="."]
+position = Vector2(231, 330)
+sprite_frames = SubResource("SpriteFrames_anq21")
+animation = &"hit"
