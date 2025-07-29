@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0f1vb40h1ycv"]
+
+[ext_resource type="Script" uid="uid://et04we5do8w2" path="res://Games/FiberOpticCable/fiber_optic_cable.gd" id="1_jqep2"]
+[ext_resource type="Shader" uid="uid://hiq0uk6h7bei" path="res://Games/FiberOpticCable/FiberOpticCable.tres" id="2_wtrvl"]
+[ext_resource type="Texture2D" uid="uid://1i2ktwug2cpa" path="res://icon.svg" id="3_tjfs0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjfs0"]
+shader = ExtResource("2_wtrvl")
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqep2")
+
+[node name="FiberOpticCable" type="Node2D" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+material = SubResource("ShaderMaterial_tjfs0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Lead Pipe"
+
+[node name="Button2" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Lead Pipe"
+
+[node name="Button3" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Lead Pipe"
+
+[node name="Button4" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Lead Pipe"
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(312, 219)
+scale = Vector2(4.38281, 3.09375)
+texture = ExtResource("3_tjfs0")

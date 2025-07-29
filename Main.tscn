@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cld3tbc7nhwkj"]
+
+[ext_resource type="Script" uid="uid://bru37xeavgwqo" path="res://main_controller.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cf2npbl6g5svx" path="res://Transition.tscn" id="2_r0du0"]
+[ext_resource type="Shader" uid="uid://cbyw44pr57grg" path="res://Main.tres" id="2_uu6xs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_glv2v"]
+viewport_path = NodePath("SubViewportContainer/GameViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r0du0"]
+viewport_path = NodePath("MaskViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cm0pq"]
+viewport_path = NodePath("TransitionViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uu6xs"]
+resource_local_to_scene = true
+shader = ExtResource("2_uu6xs")
+shader_parameter/Transition = SubResource("ViewportTexture_cm0pq")
+shader_parameter/Game = SubResource("ViewportTexture_glv2v")
+shader_parameter/Mask = SubResource("ViewportTexture_r0du0")
+shader_parameter/Transparency = 0.2
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r0du0")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="GameViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="MaskViewport" type="SubViewport" parent="."]
+transparent_bg = true
+canvas_cull_mask = 4293935104
+size = Vector2i(640, 480)
+
+[node name="TransitionViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="Transition" parent="TransitionViewport" instance=ExtResource("2_r0du0")]
+position = Vector2(320, 240)
+
+[node name="FrontViewport" type="SubViewport" parent="."]
+transparent_bg = true
+canvas_cull_mask = 4293926912
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="Display" type="ColorRect" parent="."]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("ShaderMaterial_uu6xs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.135608, 0.371497, 0.170509, 1)

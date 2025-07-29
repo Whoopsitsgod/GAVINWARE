@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Gavinware"
+run/main_scene="uid://cld3tbc7nhwkj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[rendering]
+[display]
 
-renderer/rendering_method="forward_plus"
+window/size/viewport_width=640
+window/size/viewport_height=480
