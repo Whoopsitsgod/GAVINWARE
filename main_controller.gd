@@ -27,7 +27,7 @@ func change_game(new_game: PackedScene, speed: int) -> void:
 		i.queue_free()
 	var g = new_game.instantiate()
 	game_viewport.add_child(g)
-	g.finish_game.connect(on_finish_game)
+	g.game_finished.connect(on_game_finished)
 	var tween = get_tree().create_tween()
 	var tween_time = transition_speed(speed)
 	tween.set_parallel()
@@ -40,5 +40,5 @@ func change_game(new_game: PackedScene, speed: int) -> void:
 	tween.tween_callback(func(): display.visible = false).set_delay(tween_time)
 	tween.tween_callback(func(): g.start_game(speed)).set_delay(tween_time)
 
-func on_finish_game(success: bool) -> void:
-	print('hi')
+func on_game_finished(success: bool) -> void:
+	print('did you win?: ' + str(success))
