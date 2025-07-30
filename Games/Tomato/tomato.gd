@@ -2,7 +2,10 @@ extends Node2D
 
 var won_game: bool = false
 
-signal finish_game(success: bool)
+signal game_finished(success: bool)
+
+func transition_speed(speed: int) -> float:
+	return 2/(speed*0.01 + 1)
 
 func _ready() -> void:
 	$Jackson/Button.pressed.connect(_on_pressed)
@@ -10,8 +13,8 @@ func _ready() -> void:
 	$Gavin.play("default")
 	
 func start_game(speed: int):
-	await get_tree().create_timer(speed).timeout
-	finish_game.emit(finish_game)
+	await get_tree().create_timer(transition_speed(speed)).timeout
+	game_finished.emit(won_game)
 
 func _on_pressed():
 	$Gavin.play("get_ready")
