@@ -1,0 +1,166 @@
+[gd_scene load_steps=29 format=3 uid="uid://cmwwcxpphx5kn"]
+
+[ext_resource type="Script" uid="uid://bhprmckjtm1y2" path="res://Games/ScrapMechanic/scrapmechanic.gd" id="1_7j634"]
+[ext_resource type="Texture2D" uid="uid://cu1ii0mx4h1v6" path="res://Games/ScrapMechanic/creation_background.png" id="2_8n0rx"]
+[ext_resource type="Texture2D" uid="uid://bqtscj8n4pmpa" path="res://Games/ScrapMechanic/creation_alright.png" id="3_gatw7"]
+[ext_resource type="Texture2D" uid="uid://dii5bl3w87rar" path="res://Games/ScrapMechanic/creation_crash.png" id="4_bko4w"]
+[ext_resource type="Texture2D" uid="uid://bwi40k241b0wy" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_00_delay-0.1s.png" id="5_bl7js"]
+[ext_resource type="Texture2D" uid="uid://c8el8uj31jesf" path="res://Games/ScrapMechanic/creation_macks_cry.png" id="5_yvvk6"]
+[ext_resource type="Texture2D" uid="uid://bpkkx2hndojwj" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_01_delay-0.1s.png" id="6_2b1a8"]
+[ext_resource type="Texture2D" uid="uid://bkvfwcfnqch3u" path="res://Games/ScrapMechanic/creation_macks_normal.png" id="6_424j8"]
+[ext_resource type="Texture2D" uid="uid://cs4tmbcdxglws" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_02_delay-0.1s.png" id="7_35vg3"]
+[ext_resource type="Texture2D" uid="uid://bs7bta2t1uu66" path="res://Games/ScrapMechanic/creation_macks_blink.png" id="7_jhkj7"]
+[ext_resource type="Texture2D" uid="uid://d103qpn04svuq" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_03_delay-0.1s.png" id="8_44dvj"]
+[ext_resource type="Texture2D" uid="uid://wl6kf0o3plw2" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_04_delay-0.1s.png" id="9_e52ch"]
+[ext_resource type="Texture2D" uid="uid://34finrrq2wsv" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_05_delay-0.1s.png" id="10_lf3fv"]
+[ext_resource type="Texture2D" uid="uid://cqqt8l8t5o86f" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_06_delay-0.1s.png" id="11_e1gmy"]
+[ext_resource type="Texture2D" uid="uid://c8ygvkkcmi2y7" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_07_delay-0.1s.png" id="12_qm4g0"]
+[ext_resource type="Texture2D" uid="uid://bu6nxahdyn7w1" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_08_delay-0.1s.png" id="13_hndsv"]
+[ext_resource type="Texture2D" uid="uid://qeurigy8qtka" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_09_delay-0.1s.png" id="14_sn2tc"]
+[ext_resource type="Texture2D" uid="uid://c804nsycuvqtw" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_10_delay-0.1s.png" id="15_r2c8h"]
+[ext_resource type="Texture2D" uid="uid://dokseir67wiqi" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_11_delay-0.1s.png" id="16_sypui"]
+[ext_resource type="Texture2D" uid="uid://dykd3ngcv4o0f" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_12_delay-0.1s.png" id="17_su012"]
+[ext_resource type="Texture2D" uid="uid://cajxq54ld1wcg" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_13_delay-0.1s.png" id="18_ujg8b"]
+[ext_resource type="Texture2D" uid="uid://babvlunisqmff" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_14_delay-0.1s.png" id="19_8hkys"]
+[ext_resource type="Texture2D" uid="uid://dhnkf71p6mp57" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_15_delay-0.1s.png" id="20_qkh5f"]
+[ext_resource type="Texture2D" uid="uid://dd3qeq21c48xq" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_16_delay-0.1s.png" id="21_s3c3e"]
+[ext_resource type="Texture2D" uid="uid://j8yhi2yypnda" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_17_delay-0.1s.png" id="22_2b1a8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_od6ak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gatw7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bko4w")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gl7r"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bl7js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2b1a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_35vg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_44dvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e52ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lf3fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e1gmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qm4g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hndsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sn2tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r2c8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sypui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_su012")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ujg8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8hkys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qkh5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s3c3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2b1a8")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srjtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yvvk6")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("6_424j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jhkj7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ScrapMechanic" type="Node2D"]
+script = ExtResource("1_7j634")
+
+[node name="CreationBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("2_8n0rx")
+
+[node name="Ship" type="AnimatedSprite2D" parent="."]
+position = Vector2(330, 231)
+sprite_frames = SubResource("SpriteFrames_od6ak")
+animation = &"destroyed"
+
+[node name="Button" type="Button" parent="Ship"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -264.0
+offset_top = 10.0
+offset_right = 224.0
+offset_bottom = 226.0
+rotation = -0.270526
+
+[node name="explosion" type="AnimatedSprite2D" parent="."]
+position = Vector2(323, 290)
+scale = Vector2(7.95423, 5.34184)
+sprite_frames = SubResource("SpriteFrames_0gl7r")
+animation = &"explosion"
+speed_scale = 3.0
+
+[node name="Macks" type="AnimatedSprite2D" parent="."]
+position = Vector2(545.5, 415)
+sprite_frames = SubResource("SpriteFrames_srjtm")
