@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0f1vb40h1ycv"]
+[gd_scene load_steps=7 format=3 uid="uid://c0f1vb40h1ycv"]
 
 [ext_resource type="Script" uid="uid://et04we5do8w2" path="res://Games/FiberOpticCable/fiber_optic_cable.gd" id="1_jqep2"]
 [ext_resource type="Shader" uid="uid://hiq0uk6h7bei" path="res://Games/FiberOpticCable/FiberOpticCable.tres" id="2_wtrvl"]
 [ext_resource type="Texture2D" uid="uid://ngssssxrevls" path="res://Games/FiberOpticCable/8TxrBGznc-4289732442.jpg" id="3_tjfs0"]
+[ext_resource type="PackedScene" uid="uid://c5b08fjbyifw3" path="res://Timer.tscn" id="4_aj7ea"]
 
 [sub_resource type="Theme" id="Theme_wtrvl"]
 default_font_size = 40
@@ -78,6 +79,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Timer" parent="." instance=ExtResource("4_aj7ea")]
+position = Vector2(36, 444)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

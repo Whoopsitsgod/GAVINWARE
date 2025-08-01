@@ -60,6 +60,7 @@ func _on_pressed(button_num: int):
 	$Image.visible = true
 	var tween = get_tree().create_tween()
 	var tween_time = transition_speed()
+	$Timer.stop_timer()
 	tween.set_parallel()
 	tween.tween_method(func(a): $Image.material.set_shader_parameter("Transparency", a), 0.0, 1.0, tween_time)
 	tween.tween_callback(func(): $AudioStreamPlayer.play()).set_delay(tween_time/2)
@@ -69,3 +70,5 @@ func _on_pressed(button_num: int):
 
 func _on_video_stream_player_finished() -> void:
 	$VideoStreamPlayer.visible = false
+	$Timer.start_timer(transition_speed())
+	$Timer.timeout.connect(func(): _on_pressed(-1))

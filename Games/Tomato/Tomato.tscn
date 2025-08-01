@@ -85,5 +85,5 @@ sprite_frames = SubResource("SpriteFrames_anq21")
 animation = &"hit"
 
 [node name="Timer" parent="." instance=ExtResource("9_h8asl")]
-position = Vector2(0, 480)
+position = Vector2(4, 476)
 offset = Vector2(8, -8)

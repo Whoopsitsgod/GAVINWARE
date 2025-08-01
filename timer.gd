@@ -10,6 +10,9 @@ func start_timer(time: float) -> void:
 	$Timer.wait_time = step
 	$Timer.start()
 
+func stop_timer():
+	emitted = true
+
 func _on_timer_timeout() -> void:
 	if emitted:
 		return
@@ -17,5 +20,8 @@ func _on_timer_timeout() -> void:
 		timeout.emit()
 		emitted = true
 		return
+	if steps_taken == 7:
+		self.visible = false
+
 	steps_taken += 1
 	frame += 1
