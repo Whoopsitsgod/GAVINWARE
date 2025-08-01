@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gavinware"
-run/main_scene="uid://cld3tbc7nhwkj"
+run/main_scene="uid://ds4ggsghhb1w6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
