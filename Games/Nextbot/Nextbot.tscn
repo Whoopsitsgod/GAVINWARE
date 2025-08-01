@@ -1,6 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck3dkhi7tfvd0"]
+[gd_scene load_steps=7 format=3 uid="uid://ck3dkhi7tfvd0"]
 
 [ext_resource type="Script" uid="uid://50woi8vghrvc" path="res://Games/Nextbot/nextbot.gd" id="1_6tfmu"]
+[ext_resource type="Texture2D" uid="uid://bjphosk0i7po2" path="res://Games/Nextbot/nextbot_background.png" id="2_fs503"]
+[ext_resource type="Texture2D" uid="uid://bmt8wp75qkyoi" path="res://Games/Nextbot/nextbot_toolgun.png" id="3_5k6cu"]
+[ext_resource type="Texture2D" uid="uid://cx6ar1dqss8ol" path="res://Games/Nextbot/nextbot_hud.png" id="4_37jmn"]
+[ext_resource type="Texture2D" uid="uid://bpdtgoyqw8yff" path="res://Games/Nextbot/nextbot_saul.png" id="5_cv2fq"]
+[ext_resource type="PackedScene" uid="uid://c5b08fjbyifw3" path="res://Timer.tscn" id="6_5k6cu"]
 
 [node name="Nextbot" type="Node2D"]
 script = ExtResource("1_6tfmu")
+
+[node name="NextbotBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 201.5)
+texture = ExtResource("2_fs503")
+
+[node name="NextbotToolgun" type="Sprite2D" parent="."]
+position = Vector2(492, 335)
+texture = ExtResource("3_5k6cu")
+
+[node name="NextbotHud" type="Sprite2D" parent="."]
+position = Vector2(320, 441.5)
+texture = ExtResource("4_37jmn")
+
+[node name="NextbotSaul" type="Sprite2D" parent="."]
+position = Vector2(125, 280)
+texture = ExtResource("5_cv2fq")
+
+[node name="Button" type="Button" parent="NextbotSaul"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -69.0
+offset_top = -85.0
+offset_right = 57.0
+offset_bottom = 48.0
+
+[node name="NextbotSaul2" type="Sprite2D" parent="."]
+position = Vector2(569, 202)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_cv2fq")
+
+[node name="Button" type="Button" parent="NextbotSaul2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -69.0
+offset_top = -85.0
+offset_right = 57.0
+offset_bottom = 48.0
+
+[node name="NextbotSaul3" type="Sprite2D" parent="."]
+position = Vector2(264, 204)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_cv2fq")
+
+[node name="Button" type="Button" parent="NextbotSaul3"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -69.0
+offset_top = -85.0
+offset_right = 57.0
+offset_bottom = 48.0
+
+[node name="NextbotSaul4" type="Sprite2D" parent="."]
+position = Vector2(446, 184)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_cv2fq")
+
+[node name="Button" type="Button" parent="NextbotSaul4"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -69.0
+offset_top = -85.0
+offset_right = 57.0
+offset_bottom = 48.0
+
+[node name="Timer" parent="." instance=ExtResource("6_5k6cu")]
+position = Vector2(4, 476)
+offset = Vector2(8, -8)

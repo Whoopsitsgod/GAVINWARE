@@ -15,7 +15,7 @@ var game_scene: Node
 
 var speed = 0
 
-var games = ["res://Games/FiberOpticCable/FiberOpticCable.tscn", "res://Games/Tomato/Tomato.tscn", "res://Games/ScrapMechanic/ScrapMechanic.tscn"]
+var games = ["res://Games/FiberOpticCable/FiberOpticCable.tscn", "res://Games/Nextbot/Nextbot.tscn", "res://Games/Tomato/Tomato.tscn", "res://Games/ScrapMechanic/ScrapMechanic.tscn"]
 
 func _ready():
 	transition_viewport.world_2d = mask_viewport.world_2d

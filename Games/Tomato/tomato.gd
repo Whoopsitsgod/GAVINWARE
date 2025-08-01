@@ -26,5 +26,4 @@ func _on_pressed():
 	tween.tween_property($Jackson, "position", Vector2(1200,240), 1.5)
 	tween.set_parallel()
 	tween.tween_property($Jackson, "rotation", 2, 1.5)
-	$Timer.stop_timer()
 	won_game = true

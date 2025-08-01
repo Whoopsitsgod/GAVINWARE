@@ -19,8 +19,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func start_game(speed: int):
-	await get_tree().create_timer(transition_speed(speed)).timeout
-	game_finished.emit(won_game)
+	var time = transition_speed(speed)
+	$Timer.start_timer(time)
+	$Timer.timeout.connect(func(): game_finished.emit(won_game))
 
 func _on_pressed():
 	counter += 1
