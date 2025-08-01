@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5b08fjbyifw3"]
+
+[ext_resource type="Texture2D" uid="uid://due1qckarro2p" path="res://All.png" id="1_2p01c"]
+[ext_resource type="Script" uid="uid://cpwrv8tbvhbd7" path="res://timer.gd" id="2_kkeil"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kabd4"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1168, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_551le"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1184, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsin1"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1200, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fupqg"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1216, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieeno"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1232, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vufip"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1248, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8p7w"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1264, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e61f5"]
+atlas = ExtResource("1_2p01c")
+region = Rect2(1280, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp4om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kabd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_551le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsin1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fupqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieeno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vufip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8p7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e61f5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Timer" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_wp4om")
+frame_progress = 0.789319
+script = ExtResource("2_kkeil")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

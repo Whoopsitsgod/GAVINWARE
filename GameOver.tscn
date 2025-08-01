@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6eb4n6vdjjc"]
+
+[ext_resource type="Script" uid="uid://1hytucmwspgf" path="res://game_over.gd" id="1_40baj"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_40baj")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 414.0
+offset_bottom = 141.0
+text = "Game Over"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

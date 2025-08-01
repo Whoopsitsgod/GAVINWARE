@@ -54,6 +54,7 @@ func change_game(new_game: PackedScene) -> void:
 func on_game_finished(success: bool) -> void:
 	if not success:
 		health -= 1
+	check_health()
 	$RichTextLabel.text = str(health)
 	display.visible = true
 	var tween = get_tree().create_tween()
@@ -65,4 +66,9 @@ func on_game_finished(success: bool) -> void:
 	tween.tween_property(transition, "position", Vector2(320,240), tween_time)
 	tween.tween_method(func(a: float): display.material.set_shader_parameter("Transparency", a), 1.0, 0.0, tween_time)
 	tween.set_parallel(false)
+	tween.tween_callback(func(): check_health())
 	tween.tween_callback(func(): continue_games())
+	
+func check_health():
+	if health <= 0:
+		SceneManager.goto_scene("res://GameOver.tscn")

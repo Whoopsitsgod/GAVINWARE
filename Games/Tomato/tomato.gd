@@ -13,8 +13,9 @@ func _ready() -> void:
 	$Gavin.play("default")
 	
 func start_game(speed: int):
-	await get_tree().create_timer(transition_speed(speed)).timeout
-	game_finished.emit(won_game)
+	var time = transition_speed(speed)
+	$Timer.start_timer(time)
+	$Timer.timeout.connect(func(): game_finished.emit(won_game))
 
 func _on_pressed():
 	$Gavin.play("get_ready")

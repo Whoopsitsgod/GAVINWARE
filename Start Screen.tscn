@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds4ggsghhb1w6"]
+
+[ext_resource type="Script" uid="uid://cb8kqdchjchow" path="res://start_screen.gd" id="1_1dn8d"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dn8d")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+vertical = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "GavinWare"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/BoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[connection signal="pressed" from="CenterContainer/BoxContainer/Button" to="." method="_on_button_pressed"]
