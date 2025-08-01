@@ -25,6 +25,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.stream = load(video[2])
 	correct_word = video[0]
 	incorrect_words.clear()
+	$TweenedPlayer.play_tweened(load("res://Amateur.mp3"), 2)
 	for i in range(3):
 		print("hi")
 		while true:
@@ -65,8 +66,8 @@ func _on_pressed(button_num: int):
 	tween.tween_method(func(a): $Image.material.set_shader_parameter("Transparency", a), 0.0, 1.0, tween_time)
 	tween.tween_callback(func(): $AudioStreamPlayer.play()).set_delay(tween_time/2)
 	tween.set_parallel(false)
+	tween.tween_callback($TweenedPlayer.stop_tweened.bind(0.3))
 	tween.tween_callback(func(): game_finished.emit(button_num == correct_button_num))
-
 
 func _on_video_stream_player_finished() -> void:
 	$VideoStreamPlayer.visible = false

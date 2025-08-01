@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvcwhai1hlyt4"]
+
+[ext_resource type="Script" uid="uid://ccj6ww65fssmr" path="res://tweened_player.gd" id="1_p841k"]
+
+[node name="TweenedPlayer" type="AudioStreamPlayer"]
+volume_db = -14.232
+script = ExtResource("1_p841k")
