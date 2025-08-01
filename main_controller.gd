@@ -22,13 +22,14 @@ func _ready():
 	front_mask.world_2d = mask_viewport.world_2d
 	health = inital_health
 	random_game()
+	transition.done_playing.connect(random_game)
 
 func random_game():
 	var random_game = games[randi() % len(games)]
 	change_game(load(random_game))
 
 func continue_games(): # What gets called after the last game is done
-	random_game()
+	transition.start_animation()
 
 func transition_speed() -> float:
 	return 2/(speed*0.01 + 1)
