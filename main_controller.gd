@@ -55,6 +55,7 @@ func change_game(new_game: PackedScene) -> void:
 func on_game_finished(success: bool) -> void:
 	if not success:
 		health -= 1
+	transition.set_health(health)
 	check_health()
 	$RichTextLabel.text = str(health)
 	display.visible = true
