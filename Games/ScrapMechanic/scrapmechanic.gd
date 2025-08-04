@@ -27,7 +27,7 @@ func start_game(speed: int):
 
 func _on_pressed():
 	counter += 1
-	if counter == 10:
+	if counter == 6:
 		$explosion.visible = true
 		$explosion.play("explosion")
 		$Ship.play("destroyed")

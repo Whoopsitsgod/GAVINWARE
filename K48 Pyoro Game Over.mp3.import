@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciuip0kcvly2u"
+path="res://.godot/imported/K48 Pyoro Game Over.mp3-bfc2bb7af64365caab0bfeb0da152bf4.mp3str"
+
+[deps]
+
+source_file="res://K48 Pyoro Game Over.mp3"
+dest_files=["res://.godot/imported/K48 Pyoro Game Over.mp3-bfc2bb7af64365caab0bfeb0da152bf4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
