@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4ggsghhb1w6"]
+[gd_scene load_steps=4 format=3 uid="uid://ds4ggsghhb1w6"]
 
 [ext_resource type="Script" uid="uid://cb8kqdchjchow" path="res://start_screen.gd" id="1_1dn8d"]
 [ext_resource type="Texture2D" uid="uid://c37fv5ab55h4i" path="res://gavin.png" id="2_l22m0"]
+[ext_resource type="AudioStream" uid="uid://eo4hyaoh2t5k" path="res://menumusic.ogg" id="3_03n6e"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -45,5 +46,9 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="CenterContainer/BoxContainer"]
 layout_mode = 2
 text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_03n6e")
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/BoxContainer/Button" to="." method="_on_button_pressed"]
