@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck3dkhi7tfvd0"]
+[gd_scene load_steps=8 format=3 uid="uid://ck3dkhi7tfvd0"]
 
 [ext_resource type="Script" uid="uid://50woi8vghrvc" path="res://Games/Nextbot/nextbot.gd" id="1_6tfmu"]
 [ext_resource type="Texture2D" uid="uid://bjphosk0i7po2" path="res://Games/Nextbot/nextbot_background.png" id="2_fs503"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx6ar1dqss8ol" path="res://Games/Nextbot/nextbot_hud.png" id="4_37jmn"]
 [ext_resource type="Texture2D" uid="uid://bpdtgoyqw8yff" path="res://Games/Nextbot/nextbot_saul.png" id="5_cv2fq"]
 [ext_resource type="PackedScene" uid="uid://c5b08fjbyifw3" path="res://Timer.tscn" id="6_5k6cu"]
+[ext_resource type="PackedScene" uid="uid://bvcwhai1hlyt4" path="res://TweenedPlayer.tscn" id="7_37jmn"]
 
 [node name="Nextbot" type="Node2D"]
 script = ExtResource("1_6tfmu")
@@ -72,3 +73,5 @@ offset_bottom = 48.0
 [node name="Timer" parent="." instance=ExtResource("6_5k6cu")]
 position = Vector2(4, 476)
 offset = Vector2(8, -8)
+
+[node name="TweenedPlayer" parent="." instance=ExtResource("7_37jmn")]
