@@ -26,6 +26,7 @@ func _on_pressed(button: Node):
 	button.get_parent().visible = false
 	button.disabled = true
 	counter += 1
+	$AudioStreamPlayer.play()
 	_check_win()
 	pass
 	
@@ -34,3 +35,4 @@ func _check_win():
 		$Timer.stop_timer()
 		won_game = true
 		game_finished.emit(won_game)
+		$TweenedPlayer.stop_tweened(0.3)

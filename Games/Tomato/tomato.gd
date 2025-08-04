@@ -24,6 +24,8 @@ func _on_pressed():
 	await get_tree().create_timer(0.5).timeout
 	$Gavin.play("hit")
 	$Jackson.play("struck")
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer2.play()
 	var tween = create_tween()
 	tween.tween_property($Jackson, "position", Vector2(1200,240), 1.5)
 	tween.set_parallel()

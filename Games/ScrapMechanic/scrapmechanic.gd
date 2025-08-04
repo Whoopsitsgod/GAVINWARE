@@ -32,4 +32,5 @@ func _on_pressed():
 		$explosion.play("explosion")
 		$Ship.play("destroyed")
 		$Macks.play("cry")
+		$AudioStreamPlayer.play()
 		won_game = true

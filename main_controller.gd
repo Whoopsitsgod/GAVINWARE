@@ -21,8 +21,12 @@ func _ready():
 	transition_viewport.world_2d = mask_viewport.world_2d
 	front_mask.world_2d = mask_viewport.world_2d
 	health = inital_health
-	random_game()
+	$TweenedPlayer.play_tweened(load("res://3-main-menu-101soundboards.mp3"), 0.1)
+	await get_tree().create_timer(1).timeout
+	transition.start_animation()
+	await get_tree().create_timer(4).timeout
 	transition.done_playing.connect(random_game)
+	random_game()
 
 func random_game():
 	var random_game = games[randi() % len(games)]
