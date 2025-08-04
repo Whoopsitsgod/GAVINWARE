@@ -15,7 +15,7 @@ var game_scene: Node
 
 var speed = 0
 
-var games = ["res://Games/FiberOpticCable/FiberOpticCable.tscn"] #,"res://Games/Nextbot/Nextbot.tscn", "res://Games/Tomato/Tomato.tscn", "res://Games/ScrapMechanic/ScrapMechanic.tscn"]
+var games = ["res://Games/FiberOpticCable/FiberOpticCable.tscn"]#, "res://Games/Nextbot/Nextbot.tscn", "res://Games/Tomato/Tomato.tscn", "res://Games/ScrapMechanic/ScrapMechanic.tscn"]
 
 func _ready():
 	transition_viewport.world_2d = mask_viewport.world_2d
@@ -51,6 +51,7 @@ func change_game(new_game: PackedScene) -> void:
 	tween.set_parallel(false)
 	tween.tween_callback(func(): display.visible = false)
 	tween.tween_callback(func(): g.start_game(speed))
+	$TweenedPlayer.stop_tweened(0.3)
 
 func on_game_finished(success: bool) -> void:
 	if not success:
@@ -70,6 +71,7 @@ func on_game_finished(success: bool) -> void:
 	tween.set_parallel(false)
 	tween.tween_callback(func(): check_health())
 	tween.tween_callback(func(): continue_games())
+	$TweenedPlayer.play_tweened(load("res://3-main-menu-101soundboards.mp3"), 2)
 	
 func check_health():
 	if health <= 0:

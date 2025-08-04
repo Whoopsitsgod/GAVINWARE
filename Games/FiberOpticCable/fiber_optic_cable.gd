@@ -2,11 +2,17 @@ extends Control
 
 signal game_finished(success: bool)
 
-var random_words = ["Hyena", "Sauls", "Quesidilla", "Snakes", "Spectres", "Loser Island"]
+var random_words = ["Hyena", "Sauls", "Quesidilla", "Snakes", "Specters", "Idiot Island"]
 
 var videos = [
-	["Sauls", "res://Games/FiberOpticCable/sauls.ogv", "res://Games/FiberOpticCable/sauls.ogg", "res://Games/FiberOpticCable/saul.png"]
+	["Sauls", "res://Games/FiberOpticCable/sauls.ogv", "res://Games/FiberOpticCable/sauls.ogg", "res://Games/FiberOpticCable/saul.png"],
+	["Hyena", "res://Games/FiberOpticCable/hyena.ogv", "res://Games/FiberOpticCable/hyena.ogg", "res://Games/FiberOpticCable/hyena.png"],
+	["Snakes", "res://Games/FiberOpticCable/snakes.ogv", "res://Games/FiberOpticCable/snakes.ogg", "res://Games/FiberOpticCable/snakes.png"],
+	["Idiot Island", "res://Games/FiberOpticCable/usa.ogv", "res://Games/FiberOpticCable/usa.ogg", "res://Games/FiberOpticCable/idiot_island.png"],
+	["Specters", "res://Games/FiberOpticCable/spectre.ogv", "res://Games/FiberOpticCable/spectre.ogg", "res://Games/FiberOpticCable/specter.png"],
+	["Quesidilla", "res://Games/FiberOpticCable/que.ogv", "res://Games/FiberOpticCable/que.ogg", "res://Games/FiberOpticCable/quesadilla.png"]
 ]
+
 
 var correct_word: String
 var incorrect_words: Array[String]
@@ -25,7 +31,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.stream = load(video[2])
 	correct_word = video[0]
 	incorrect_words.clear()
-	$TweenedPlayer.play_tweened(load("res://Amateur.mp3"), 2)
+	$TweenedPlayer.play_tweened(load("res://01 Metallic Monks.mp3"), 2)
 	for i in range(3):
 		print("hi")
 		while true:

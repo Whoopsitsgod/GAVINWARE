@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhiu3mn3g7a8h"]
+[gd_scene load_steps=13 format=3 uid="uid://dhiu3mn3g7a8h"]
 
 [ext_resource type="Script" uid="uid://wmc55a337otx" path="res://Games/Tomato/tomato.gd" id="1_lv8d1"]
 [ext_resource type="Texture2D" uid="uid://boiiosvr50u1r" path="res://Games/Tomato/tomato_background.png" id="1_yujni"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bmkes4tpsdvl2" path="res://Games/Tomato/tomato_jackson_2.png" id="6_u6016"]
 [ext_resource type="Texture2D" uid="uid://b2jgehf6pwm8b" path="res://Games/Tomato/tomato_jackson_3.png" id="8_hfjst"]
 [ext_resource type="PackedScene" uid="uid://c5b08fjbyifw3" path="res://Timer.tscn" id="9_h8asl"]
+[ext_resource type="PackedScene" uid="uid://bvcwhai1hlyt4" path="res://TweenedPlayer.tscn" id="10_bip7y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6syp"]
 animations = [{
@@ -87,3 +88,5 @@ animation = &"hit"
 [node name="Timer" parent="." instance=ExtResource("9_h8asl")]
 position = Vector2(4, 476)
 offset = Vector2(8, -8)
+
+[node name="TweenedPlayer" parent="." instance=ExtResource("10_bip7y")]

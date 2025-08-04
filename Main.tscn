@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cld3tbc7nhwkj"]
+[gd_scene load_steps=10 format=3 uid="uid://cld3tbc7nhwkj"]
 
 [ext_resource type="Script" uid="uid://bru37xeavgwqo" path="res://main_controller.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cf2npbl6g5svx" path="res://Transition.tscn" id="2_r0du0"]
 [ext_resource type="Shader" uid="uid://cbyw44pr57grg" path="res://Main.tres" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://bvcwhai1hlyt4" path="res://TweenedPlayer.tscn" id="4_cm0pq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fos0i"]
 viewport_path = NodePath("FrontViewport")
@@ -72,3 +73,5 @@ color = Color(0.135608, 0.371497, 0.170509, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 text = "4"
+
+[node name="TweenedPlayer" parent="." instance=ExtResource("4_cm0pq")]

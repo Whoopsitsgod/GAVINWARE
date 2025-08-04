@@ -11,11 +11,13 @@ func _ready() -> void:
 	$Jackson/Button.pressed.connect(_on_pressed)
 	$Jackson.play("default")
 	$Gavin.play("default")
+	$TweenedPlayer.play_tweened(load("res://140-race-calibration-101soundboards.mp3"), 2)
 	
 func start_game(speed: int):
 	var time = transition_speed(speed)
 	$Timer.start_timer(time)
 	$Timer.timeout.connect(func(): game_finished.emit(won_game))
+	$Timer.timeout.connect(func(): $TweenedPlayer.stop_tweened(0.3))
 
 func _on_pressed():
 	$Gavin.play("get_ready")

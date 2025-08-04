@@ -14,3 +14,4 @@ func set_health(health: int):
 	$Health2.visible = health >= 3
 	$Health3.visible = health >= 2
 	$Health4.visible = health >= 1
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cmwwcxpphx5kn"]
+[gd_scene load_steps=31 format=3 uid="uid://cmwwcxpphx5kn"]
 
 [ext_resource type="Script" uid="uid://bhprmckjtm1y2" path="res://Games/ScrapMechanic/scrapmechanic.gd" id="1_7j634"]
 [ext_resource type="Texture2D" uid="uid://cu1ii0mx4h1v6" path="res://Games/ScrapMechanic/creation_background.png" id="2_8n0rx"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dd3qeq21c48xq" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_16_delay-0.1s.png" id="21_s3c3e"]
 [ext_resource type="Texture2D" uid="uid://j8yhi2yypnda" path="res://Games/ScrapMechanic/explosiongifaspngs/frame_17_delay-0.1s.png" id="22_2b1a8"]
 [ext_resource type="PackedScene" uid="uid://c5b08fjbyifw3" path="res://Timer.tscn" id="26_35vg3"]
+[ext_resource type="PackedScene" uid="uid://bvcwhai1hlyt4" path="res://TweenedPlayer.tscn" id="27_44dvj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_od6ak"]
 animations = [{
@@ -169,3 +170,5 @@ sprite_frames = SubResource("SpriteFrames_srjtm")
 [node name="Timer" parent="." instance=ExtResource("26_35vg3")]
 position = Vector2(4, 476)
 offset = Vector2(8, -8)
+
+[node name="TweenedPlayer" parent="." instance=ExtResource("27_44dvj")]

@@ -28,7 +28,7 @@ func _on_pressed(button: Node):
 	pass
 	
 func _check_win():
-	$Timer.stop_timer()
 	if counter == 4:
+		$Timer.stop_timer()
 		won_game = true
 		game_finished.emit(won_game)
